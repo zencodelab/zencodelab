@@ -21,7 +21,7 @@ Welcome to my GitHub profile! This repository is a profile README template you c
 - Languages: JavaScript, TypeScript, Python, Go
 - Frameworks/Libraries: React, Next.js, Node.js, Express
 - Tools: Docker, Git, GitHub Actions, Terraform
-- Databases: PostgreSQL, MongoDB
+- Databases: PostgreSQL
 
 ---
 
