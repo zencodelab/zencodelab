@@ -1,65 +1,47 @@
-# Hi there, I'm [Your Name] 👋
+# ZenCodeLab
 
-Welcome to my GitHub profile! This repository is a profile README template you can copy and customize.
-
----
-
-## About Me
-
-- 🔭 I’m currently working on: [Project Name]
-- 🌱 I’m currently learning: [Technologies]
-- 👯 I’m looking to collaborate on: [Project types]
-- 🤝 I’m looking for help with: [What you need help with]
-- 💬 Ask me about: [Topics you know about]
-- 📫 How to reach me: [email@example.com] or [@your_twitter]
-- ⚡ Fun fact: [Something interesting about you]
+Production-grade AI and full-stack demos by [Afsal A Azeez](https://github.com/afsalaazeez) — M.Tech IIT Bombay, 5+ years building LLM systems and full-stack software at a Mayfield-funded AI startup.
 
 ---
 
-## Skills
+## Projects
 
-- Languages: JavaScript, TypeScript, Python, Go
-- Frameworks/Libraries: React, Next.js, Node.js, Express
-- Tools: Docker, Git, GitHub Actions, Terraform
-- Databases: PostgreSQL
+### [GovShield](https://github.com/zencodelab/raglearn) — Secure Offline RAG Portal
 
----
+100% offline Retrieval-Augmented Generation system with role-based access control.
 
-## Featured Projects
+- **RBAC pre-filtering** at the vector store layer — chunks tagged `L1`/`L2`/`Public` at ingestion; clearance enforced before retrieval, not post-retrieval
+- Full ingestion pipeline: multi-page PDF parsing, sentence-level chunking, local embedding via Ollama (`nomic-embed-text` 768d), storage in PostgreSQL pgvector
+- **FastAPI REST API** (`POST /query`) with Pydantic-validated request/response and auto-generated Swagger UI
+- Streamlit dashboard + interactive CLI
+- Dockerized multi-service deployment (pgvector DB + Streamlit UI + FastAPI)
+- Grounding guardrail refuses out-of-scope queries
 
-- [Project One](https://github.com/yourusername/project-one) - Short description
-- [Project Two](https://github.com/yourusername/project-two) - Short description
-- [Project Three](https://github.com/yourusername/project-three) - Short description
-
-You can pin repositories to your profile via the GitHub UI to highlight them.
+**Stack:** Python · LlamaIndex · PostgreSQL pgvector · FastAPI · Ollama · Docker
 
 ---
 
-## GitHub Stats
+### [TaskEngine](https://github.com/zencodelab/aiautonomous) — Autonomous Task Agent
 
-<!-- GitHub readme stats placeholders. To use them, visit https://github.com/anuraghazra/github-readme-stats and follow instructions. -->
+Plan → Execute → Reflect autonomous loop built with LangChain and LangGraph.
 
-[![Your Name's GitHub stats](https://github-readme-stats.vercel.app/api?username=zencodelab&show_icons=true&theme=default)](https://github.com/zencodelab)
+- **Planner** (LangChain + GPT-4o) decomposes plain-text queries into ordered atomic steps with tool hints; retrieves similar past runs from Pinecone for few-shot context
+- **Executor** (LangGraph `create_react_agent`) runs each step as a ReAct agent with a full tool suite: web search, Python execution, file I/O, math evaluation, knowledge retrieval
+- **Reflector** (LangChain) scores output quality 0.0–1.0 and triggers re-planning if below threshold
+- **Knowledge store** (Pinecone) persists past execution results for future planner context
+- FastAPI REST server, CLI interface, and test suite included
 
----
-
-## Contact
-
-- Website: https://yourwebsite.com
-- Email: email@example.com
-- Twitter: https://twitter.com/yourhandle
-- LinkedIn: https://www.linkedin.com/in/yourprofile
+**Stack:** Python · LangChain · LangGraph · Pinecone · FastAPI · OpenAI
 
 ---
 
-## How to use this template
+## About
 
-1. Click "Use this template" or fork this repository.
-2. Rename the repository to your GitHub username (e.g., `zencodelab`) if you want it to show on your profile.
-3. Edit this README.md and replace placeholders with your information.
-4. Commit and push. Your profile page will update automatically.
+| | |
+|---|---|
+| **Main profile** | [github.com/afsalaazeez](https://github.com/afsalaazeez) |
+| **Portfolio** | [afsal-a-azeez.in](https://afsal-a-azeez.in) |
+| **LinkedIn** | [linkedin.com/in/afsalaazeez](https://www.linkedin.com/in/afsalaazeez/) |
+| **Email** | afsalaazeez@gmail.com |
 
-
----
-
-Thanks for stopping by! ⭐️
+Core stack across projects: Python · TypeScript · React · Node.js · FastAPI · LangChain · LlamaIndex · PostgreSQL · Docker · Kubernetes · AWS
