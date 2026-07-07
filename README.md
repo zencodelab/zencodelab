@@ -1,10 +1,24 @@
 # ZenCodeLab
 
-Production-grade AI and full-stack demos by [Afsal A Azeez](https://github.com/afsalaazeez) — M.Tech IIT Bombay, 5+ years building LLM systems and full-stack software at a Mayfield-funded AI startup.
+Production-grade AI and full-stack demos by [Afsal A Azeez](https://github.com/afsalaazeez) — M.Tech IIT Bombay, 5+ years building LLM systems and full-stack software at Zettabytes, makers of Roost.ai.
 
 ---
 
 ## Projects
+
+### [AgentForge](https://github.com/zencodelab/agent-orchestrator) — Real-Time Multi-Agent Orchestration Platform
+
+A LangGraph **Planner → Researcher → Synthesizer** pipeline whose execution is streamed live to the browser and visualized on an interactive graph. **[Live demo →](https://zencodelab.github.io/agent-orchestrator/)** (runs entirely client-side, no API keys needed).
+
+- **Server-Sent Events** stream every node transition and token to a live [React Flow](https://reactflow.dev) graph (idle → active → done/error) with a token-by-token log
+- **Resumable streaming**: events persisted with a monotonic `seq`; the client reconnects with `last_event_id` and the server replays only the missed tail
+- Runs persisted to SQLite (refresh- and replay-safe) with per-node error resilience — a failed agent turns red while the rest of the pipeline finishes
+- **Deterministic mock LLM** so the full stack demos offline; swap in real OpenAI + Tavily via env vars
+- Dockerized (`docker compose up`) — FastAPI backend + Vite/React frontend
+
+**Stack:** React · TypeScript · React Flow · Zustand · FastAPI · LangGraph · SQLite · SSE · Docker
+
+---
 
 ### [GovShield](https://github.com/zencodelab/raglearn) — Secure Offline RAG Portal
 
